@@ -1,12 +1,6 @@
 require 'pg'
 require 'rest-client'
 
-response = RestClient.get("pet-shop.api.mks.io")
-home = JSON.parse(response)
-
-result = RestClient.get("pet-shop.api.mks.io/shops")
-shops = JSON.parse(result)
-
 def connect
   @conn ||= PG::Connection.new(host: 'localhost', dbname: 'petshop_db')
 end
